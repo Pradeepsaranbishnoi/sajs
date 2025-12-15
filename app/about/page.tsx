@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaHeart, FaShieldAlt, FaUsers, FaLightbulb, FaLeaf, FaStar, FaBullseye, FaEye, FaProjectDiagram, FaMapMarkerAlt, FaHandsHelping, FaArrowRight } from 'react-icons/fa';
 import Counter from '@/components/ui/Counter';
@@ -57,25 +58,25 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-white p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-200">
-                    <div className="text-4xl font-bold text-primary-600 mb-2">2010</div>
-                    <div className="text-sm text-gray-600 font-medium">Founded</div>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-200">
-                    <div className="text-4xl font-bold text-primary-600 mb-2">25+</div>
-                    <div className="text-sm text-gray-600 font-medium">Communities</div>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-200">
-                    <div className="text-4xl font-bold text-primary-600 mb-2">50K+</div>
-                    <div className="text-sm text-gray-600 font-medium">Lives Impacted</div>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl shadow-md text-center transform hover:scale-105 transition-transform duration-200">
-                    <div className="text-4xl font-bold text-primary-600 mb-2">100+</div>
-                    <div className="text-sm text-gray-600 font-medium">Volunteers</div>
-                  </div>
+              <div className="relative rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/indian_about_community.png"
+                  alt="SAJS Social Worker with Community"
+                  width={800}
+                  height={400}
+                  className="w-full h-[400px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <div className="text-sm font-semibold uppercase tracking-wider mb-1">Established 2010</div>
+                  <div className="text-2xl font-bold">Touching Lives Every Day</div>
                 </div>
+              </div>
+              
+              {/* Floating Stat Card */}
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border-l-4 border-primary-600 hidden md:block">
+                 <div className="text-4xl font-bold text-primary-600 mb-1">50K+</div>
+                 <div className="text-sm text-gray-600 font-medium">Lives Impacted Annually</div>
               </div>
             </div>
           </div>

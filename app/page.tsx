@@ -50,11 +50,11 @@ export default function Home() {
             <div className="relative flex justify-center md:justify-end">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl w-full">
                 <Image
-                  src="/images/hero_landscape.png"
-                  alt="SAJS Community Impact"
+                  src="/images/indian_hero_main.png"
+                  alt="SAJS Community Impact - Empowering Village Life"
                   width={1200}
-                  height={630}
-                  className="w-full object-cover h-[350px]"
+                  height={800}
+                  className="w-full object-cover h-[400px] md:h-[500px]"
                   priority
                 />
               </div>
