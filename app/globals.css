@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   ROOT VARIABLES
+   ============================================ */
+:root {
+  --primary-50: #f0fdf4;
+  --primary-100: #dcfce7;
+  --primary-500: #22c55e;
+  --primary-600: #16a34a;
+  --primary-700: #15803d;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   SMOOTH SCROLLING
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-600);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-700);
+}
+
+/* ============================================
+   SECTION SPACING
+   ============================================ */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* ============================================
+   TEXT SELECTION
+   ============================================ */
+::selection {
+  background-color: #bbf7d0;
+  color: #14532d;
+}
+
+::-moz-selection {
+  background-color: #bbf7d0;
+  color: #14532d;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+:focus-visible {
+  outline: 3px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   ENHANCED NAVBAR
+   ============================================ */
+.navbar-scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   SCROLL TO TOP BUTTON
+   ============================================ */
+.scroll-to-top-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+.mobile-menu-active {
+  max-height: 500px;
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--primary-600);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
