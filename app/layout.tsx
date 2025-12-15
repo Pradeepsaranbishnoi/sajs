@@ -15,6 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sajsfoundation.org'),
   title: "SAJS Foundation - Empowering Communities, Transforming Lives | NGO India",
   description: "SAJS Foundation is a leading NGO dedicated to empowering underprivileged communities through education, healthcare, and sustainable development programs across India.",
   keywords: "NGO India, charity foundation, SAJS Foundation, donate to charity, community development, education for children, healthcare NGO, social welfare, volunteer opportunities, nonprofit organization, sustainable development, empowerment programs",

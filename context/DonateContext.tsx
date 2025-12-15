@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 interface DonateContextType {
   isDonateOpen: boolean;
@@ -14,7 +14,6 @@ const DonateContext = createContext<DonateContextType | undefined>(undefined);
 export function DonateProvider({ children }: { children: ReactNode }) {
   const [isDonateOpen, setIsDonateOpen] = useState(false);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const openDonate = () => setIsDonateOpen(true);
   
@@ -45,7 +44,7 @@ export function DonateProvider({ children }: { children: ReactNode }) {
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <DonateContext.Provider value={{ isDonateOpen, openDonate, closeDonate }}>
