@@ -34,7 +34,7 @@ export default function ContactInfo() {
       <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
       <div className="space-y-6">
         <ContactItem icon={FaMapMarkerAlt} title="Address">
-          123 Charity Lane, Green Park<br />New Delhi, India - 110016
+          PLOT NO 155, PRITHVI RAJ NAGAR JHALAMAND,<br />Jodhpur K.U.M. Bhagat Ki Kothi S.O,<br />Rajasthan, INDIA 342006
         </ContactItem>
 
         <ContactItem icon={FaPhone} title="Phone">
@@ -42,7 +42,7 @@ export default function ContactInfo() {
         </ContactItem>
 
         <ContactItem icon={FaEnvelope} title="Email">
-          info@sajs.org<br />support@sajs.org
+          info@sajs.in
         </ContactItem>
 
         <ContactItem icon={FaClock} title="Working Hours">

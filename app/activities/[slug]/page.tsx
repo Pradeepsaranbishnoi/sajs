@@ -43,8 +43,28 @@ export default async function ActivityPage({ params }: PageProps) {
     notFound();
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Project',
+    name: activity.title,
+    description: activity.description,
+    image: `https://sajs.in${activity.image}`,
+    provider: {
+        '@type': 'Organization',
+        name: 'SAJS Foundation'
+    },
+    location: {
+        '@type': 'Place',
+        name: 'India'
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

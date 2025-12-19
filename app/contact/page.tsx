@@ -8,8 +8,31 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'SAJS Foundation',
+      telephone: '+91-11-2345-6789',
+      email: 'info@sajs.in',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Plot No 155, Prithvi Raj Nagar Jhalamand',
+        addressLocality: 'Jodhpur',
+        addressRegion: 'Rajasthan',
+        postalCode: '342006',
+        addressCountry: 'IN'
+      }
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="pt-32 pb-16 bg-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader

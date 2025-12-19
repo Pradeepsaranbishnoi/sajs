@@ -9,8 +9,41 @@ import StatHighlight from '@/components/ui/StatHighlight';
 import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NGO',
+    name: 'SAJS Foundation',
+    url: 'https://sajs.in',
+    logo: 'https://sajs.in/logo.png',
+    sameAs: [
+      'https://facebook.com/sajsfoundation',
+      'https://twitter.com/sajsfoundation',
+      'https://instagram.com/sajsfoundation',
+      'https://linkedin.com/company/sajsfoundation'
+    ],
+    description: 'Empowering communities through education, healthcare, and sustainable development.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Plot No 155, Prithvi Raj Nagar Jhalamand',
+      addressLocality: 'Jodhpur',
+      addressRegion: 'Rajasthan',
+      postalCode: '342006',
+      addressCountry: 'IN'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+91-11-2345-6789',
+      contactType: 'customer service',
+      email: 'info@sajs.in'
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section id="home" className="relative pt-16 bg-primary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">

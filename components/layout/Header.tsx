@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
@@ -31,8 +32,13 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-200">
-                <span className="text-white font-bold text-lg">S</span>
+              <div className="relative w-12 h-12 rounded-lg overflow-hidden group-hover:shadow-lg transition-all duration-200">
+                <Image 
+                  src="/logo.png" 
+                  alt="SAJS Logo" 
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="text-xl font-semibold text-gray-900">SAJS Foundation</span>
             </Link>

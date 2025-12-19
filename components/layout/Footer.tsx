@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
@@ -10,13 +11,21 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">S</span>
+              <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-white/10 p-1">
+                 <Image 
+                  src="/logo.png" 
+                  alt="SAJS Logo" 
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="text-xl font-semibold text-white">SAJS Foundation</span>
             </div>
             <p className="text-sm text-gray-400">
               Empowering communities through education, healthcare, and sustainable development.
+            </p>
+            <p className="text-xs text-primary-400 mt-2 font-mono">
+              Reg No: COOP/2019/JODHPUR/100657
             </p>
           </div>
 
@@ -45,7 +54,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-2 text-primary-400" />
-                <span>123 Charity Lane, Green Park<br />New Delhi, 110016</span>
+                <span>Plot No 155, Prithvi Raj Nagar Jhalamand,<br />Jodhpur, Rajasthan 342006</span>
               </li>
               <li className="flex items-center">
                 <FaPhone className="mr-2 text-primary-400" />
@@ -53,7 +62,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-2 text-primary-400" />
-                <span>info@sajs.org</span>
+                <span>info@sajs.in</span>
               </li>
             </ul>
           </div>
